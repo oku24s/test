@@ -1,0 +1,13 @@
+
+#BootStrap: docker
+#From: kishwars/pepper_deepvariant:r0.8
+BootStrap: docker-archive
+From: ./container/base_images/pepper_margin_deepvariant.tar
+
+%files
+        ./container/bin/shell/ONT_processing_4_deepvariant.sh /usr/local/bin
+        ./container/lib/DFR_ref /usr/local/lib
+        ./container/lib/ANS_ref /usr/local/lib
+
+%environment
+        export LC_ALL=C

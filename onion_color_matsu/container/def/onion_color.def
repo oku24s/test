@@ -1,0 +1,47 @@
+
+BootStrap: docker-archive
+From: ./container/base_images/continuumio3.tar
+
+%post
+        python --version
+        conda --version
+        conda install -c bioconda -c conda-forge whatshap=1.1
+        conda install -c bioconda bcftools
+        conda install -c bioconda samtools
+        conda install -c bioconda minimap2
+        conda install -c bioconda seqkit
+        conda install htslib
+        conda install -c bioconda sniffles
+        conda install python-Levenshtein
+        conda install -c bioconda biopython
+        conda install -c bioconda pysam
+	ln -s /opt/conda/lib/libcrypto.so.1.1 /opt/conda/lib/libcrypto.so.1.0.0
+
+%files
+        ./container/bin/python/haplotype_splitter.py /usr/local/bin
+        ./container/bin/python/ONT_cigar_filter.py /usr/local/bin
+        ./container/bin/python/ONT_demultiplex_trimming_old_complete.py /usr/local/bin
+        ./container/bin/python/ONT_demultiplex_trimming_old.py /usr/local/bin
+        ./container/bin/python/ONT_demultiplex_trimming.v4.py /usr/local/bin
+        ./container/bin/python/ONT_processing_7_output_ANS.py /usr/local/bin
+        ./container/bin/python/ONT_processing_7_output_DFR.py /usr/local/bin
+        ./container/bin/python/ONT_processing_9_output_ANS_fin.py /usr/local/bin
+        ./container/bin/python/ONT_processing_9_output_DFR_fin.py /usr/local/bin
+        ./container/bin/shell/ONT_processing_0_demultiplex_trimming.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_1_reference_check.DFR.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_1_reference_check.ANS.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_2_haplotype_split.ANS.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_2_haplotype_split.DFR.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_3_minimap2.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_4_bcftools_sniffles.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_5_merge.sh /usr/local/bin
+        ./container/bin/shell/ANS_ONT_processing_6_merge_files.sh /usr/local/bin
+        ./container/bin/shell/DFR_ONT_processing_6_merge_files.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_8_output_ANS_fin.sh /usr/local/bin
+        ./container/bin/shell/ONT_processing_8_output_DFR_fin.sh /usr/local/bin
+        ./container/lib/ANS_ref /usr/local/lib
+        ./container/lib/DFR_ref /usr/local/lib
+        ./container/lib/Allele_dict /usr/local/lib
+
+%environment
+        export LC_ALL=C.UTF-8

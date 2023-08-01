@@ -1,0 +1,28 @@
+
+#BootStrap: docker
+#From: nfcore/snpeff:5.1.R64-1-1
+BootStrap: docker-archive
+From: ./container/base_images/snpeff.tar
+
+%post
+        #snpeffでデータベース構築
+        snpEff build -gff3 -v Onion_DFR -noCheckProtein -noCheckCds
+        snpEff build -gff3 -v Onion_ANS_L -noCheckProtein -noCheckCds
+        snpEff build -gff3 -v Onion_ANS_h1 -noCheckProtein -noCheckCds
+
+%files
+	#スクリプトをコンテナにコピー
+       	./container/bin/shell/ANS_processing_6_annotation.sh /usr/local/bin
+        ./container/bin/shell/DFR_processing_6_annotation.sh /usr/local/bin
+	#referenceをコンテナにコピー
+        ./container/lib/ANS_ref /usr/local/lib
+        ./container/lib/DFR_ref /usr/local/lib
+        ./container/lib/Allele_dict /usr/local/lib
+	#データベース構築用データをコンテナにコピー
+	./container/snpEff/Onion_DFR /opt/conda/envs/nf-core-snpeff-5.1/share/snpeff-5.1-2/data
+	./container/snpEff/Onion_ANS_L /opt/conda/envs/nf-core-snpeff-5.1/share/snpeff-5.1-2/data
+	./container/snpEff/Onion_ANS_h1 /opt/conda/envs/nf-core-snpeff-5.1/share/snpeff-5.1-2/data
+	./container/snpEff/snpEff.config /opt/conda/envs/nf-core-snpeff-5.1/share/snpeff-5.1-2
+
+%environment
+        export LC_ALL=C.UTF-8

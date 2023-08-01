@@ -1,0 +1,20 @@
+#seqname	source	feature	start	end	score	strand	frame	attribute
+19-WGS-ACE30_Scaffold003	.	gene	605	2176	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	605	734	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	605	734	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	intron	735	825	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	826	995	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	826	995	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	intron	996	1099	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	1100	1294	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	1100	1294	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	intron	1295	1357	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	1358	1517	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	1358	1517	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	intron	1518	1598	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	1599	1791	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	1599	1791	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	intron	1792	1872	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	exon	1873	2176	.	+	.	ID=DFR
+19-WGS-ACE30_Scaffold003	.	CDS	1873	2176	.	+	.	ID=DFR
+

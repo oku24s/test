@@ -1,0 +1,7 @@
+#seqname	source	feature	start	end	score	strand	frame	attribute
+ANS_h1_amplicon	.	gene	1144	2320	.	+	.	ID=ANS
+ANS_h1_amplicon	.	exon	1144	1640	.	+	.	ID=ANS
+ANS_h1_amplicon	.	intron	1641	1746	.	+	.	ID=ANS
+ANS_h1_amplicon	.	CDS	1747	2320	.	+	.	ID=ANS
+ANS_h1_amplicon	.	exon	1747	2320	.	+	.	ID=ANS
+ANS_h1_amplicon	.	CDS	1144	1640	.	+	.	ID=ANS
